@@ -3,7 +3,7 @@
 
 pkgname=fprintd
 pkgver=0.7.0+12+ge55ad52
-pkgrel=2
+pkgrel=3
 pkgdesc="D-Bus service to access fingerprint readers"
 arch=(i686 x86_64)
 url="https://www.freedesktop.org/wiki/Software/fprint/fprintd"
@@ -41,4 +41,5 @@ build() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
+  install -d -m 700 "$pkgdir/var/lib/fprint"
 }
