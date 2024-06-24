@@ -21,6 +21,7 @@ depends=(
 )
 makedepends=(
   git
+  glib2-devel
   gtk-doc
   meson
   pam_wrapper
