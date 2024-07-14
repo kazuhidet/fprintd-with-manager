@@ -1,0 +1,4 @@
+[fprintd]
+source = "git"
+git = "https://gitlab.freedesktop.org/libfprint/fprintd.git"
+prefix = "v"
