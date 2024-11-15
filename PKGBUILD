@@ -2,7 +2,7 @@
 # Contributor: Nikolay Rysev <mad.f3ka@gmail.com>
 
 pkgname=fprintd
-pkgver=1.94.3
+pkgver=1.94.4
 pkgrel=1
 pkgdesc="D-Bus service to access fingerprint readers"
 url="https://fprint.freedesktop.org/"
@@ -35,7 +35,7 @@ source=(
   "git+https://gitlab.freedesktop.org/libfprint/fprintd.git?signed#tag=v$pkgver"
   tests.diff
 )
-b2sums=('53d98459f3049f584adf3ae206397ee276704e3c6f555c48b94dc09078585eea827ba46c30662b1bed81881f0b1f6ec59031fcadc38c8c80ed871e04a3d5b6c8'
+b2sums=('99fc9ed566fb3aecf6a2b737ee2d5ce4c7e655f606bb8af18faaa5fe662eda67ea4b547daa61bf8899174c3c0e1c0312d89e1e80467faf54c51934a1e31042f7'
         '119ee0ebc02a3bf62bb6704aa0229a5bb383bc3fcb8b86501cf94551274532cf5578fca2aba2dc17b45f98683f1445f25b4fe3cb756be5fddb46d61f7b95f198')
 validpgpkeys=(
   D4C501DA48EB797A081750939449C2F50996635F # Marco Trevisan (Treviño) <mail@3v1n0.net>
