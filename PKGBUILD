@@ -33,10 +33,8 @@ makedepends=(
 groups=(fprint)
 source=(
   "git+https://gitlab.freedesktop.org/libfprint/fprintd.git?signed#tag=v$pkgver"
-  tests.diff
 )
-b2sums=('e9fec866da871cdae2f3312b8428209237f94312c6baa622cb1d71960d2de422c7aab339b75c05607cb915da28ad0135c9cf3538fbde9df1700a36d5f9547ba8'
-        '46c3287cb9430e607af53b4000144cd7b4c95cdd8f388b342136838ffcce400c36691bb8571a4413aca0d9b698c7f3eec766654ee9c30da7298d806127972cec')
+b2sums=('e9fec866da871cdae2f3312b8428209237f94312c6baa622cb1d71960d2de422c7aab339b75c05607cb915da28ad0135c9cf3538fbde9df1700a36d5f9547ba8')
 validpgpkeys=(
   D4C501DA48EB797A081750939449C2F50996635F # Marco Trevisan (Treviño) <mail@3v1n0.net>
 )
@@ -44,8 +42,8 @@ validpgpkeys=(
 prepare() {
   cd fprintd
 
-  # PAM tests succeed but time out?
-  git apply -3 ../tests.diff
+  # Fix tests
+  git cherry-pick -n ec2a995c36f0757e1f5c695a80d89f41d2fa03bb
 }
 
 build() {
