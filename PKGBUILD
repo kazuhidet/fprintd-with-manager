@@ -3,16 +3,16 @@
 
 pkgname=fprintd
 pkgver=1.94.5
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus service to access fingerprint readers"
 url="https://fprint.freedesktop.org/"
 arch=(x86_64)
 license=(GPL-2.0-or-later)
 depends=(
   dbus
-  gcc-libs
   glib2
   glibc
+  libgcc
   libfprint
   pam
   polkit
