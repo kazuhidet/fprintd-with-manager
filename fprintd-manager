@@ -120,6 +120,8 @@ SERVICE_PAM_FILES = {
         "login",                 # TTY login, and COSMIC's greetd service = login
     ],
     "Lock screen": [
+        "omarchy-lock-fingerprint",  # Omarchy Quattro / Quickshell
+        "hyprlock",              # Omarchy 3 / Hyprland
         "kde-fingerprint",       # KDE Plasma 6 — dedicated fingerprint stack (native)
         "kscreenlocker",         # KDE Plasma 6
         "kscreenlocker_greet",   # KDE Plasma 6 (alt)
@@ -132,6 +134,20 @@ SERVICE_PAM_FILES = {
     ],
     "sudo": ["sudo"],
     "polkit": ["polkit-1", "polkit-1-kde-1"],
+}
+
+# PAM services used by each display manager, keyed by its systemd unit name.
+# Leftover packages (e.g. gdm installed next to sddm on Omarchy) ship their
+# own PAM files, including a native gdm-fingerprint; without this the login
+# toggle would edit only that unused service and the real greeter stays as-is.
+DISPLAY_MANAGER_PAM_FILES = {
+    "plasmalogin": ["plasmalogin"],
+    "sddm": ["sddm"],
+    "gdm": ["gdm-password", "gdm-fingerprint"],
+    "greetd": ["greetd", "cosmic-greeter", "login"],
+    "cosmic-greeter": ["cosmic-greeter", "greetd", "login"],
+    "lightdm": ["lightdm"],
+    "lxdm": ["lxdm"],
 }
 
 FINGERS = [
@@ -429,7 +445,11 @@ def get_pam_auth_locations():
     )
 
     locations = {}
-    for name, files in SERVICE_PAM_FILES.items():
+    for name in SERVICE_PAM_FILES:
+        if name == "Lock screen" and _is_omarchy_lock():
+            locations[name] = _has_fprintd_in_stack("omarchy-lock-fingerprint")
+            continue
+        files = _location_services(name)
         enabled = False
         any_file_present = False
         for f in files:
@@ -451,6 +471,34 @@ def run_as_root(cmd_str):
     return run_cmd(["pkexec", "bash", "-c", cmd_str], timeout=60)
 
 
+def _active_display_manager():
+    """systemd unit name of the enabled display manager, or None."""
+    try:
+        target = os.path.realpath("/etc/systemd/system/display-manager.service")
+    except OSError:
+        return None
+    unit = os.path.basename(target)
+    if not unit.endswith(".service") or unit == "display-manager.service":
+        return None
+    return unit[:-len(".service")]
+
+
+def _location_services(location):
+    """PAM services that actually serve `location` on this machine."""
+    if location == "Login screen":
+        dm = _active_display_manager()
+        if dm in DISPLAY_MANAGER_PAM_FILES:
+            return DISPLAY_MANAGER_PAM_FILES[dm]
+    return SERVICE_PAM_FILES.get(location, [])
+
+
+def _is_omarchy_lock():
+    return any(os.path.exists(_pam_path(service)) for service in (
+        "omarchy-lock-password", "omarchy-lock-fingerprint",
+        "omarchy-lock-fingerprint.fprintd-manager-disabled",
+    ))
+
+
 def pam_toggle_cmd(location, enable, max_tries=7, timeout=30):
     """Build a root bash script that enables/disables fingerprint for one auth
     location by managing that service's own PAM file — independently of the others.
@@ -465,9 +513,32 @@ def pam_toggle_cmd(location, enable, max_tries=7, timeout=30):
     The full vendor stack (incl. the password path) is always preserved, and the
     fprintd line is only ever 'sufficient', so password auth never breaks.
     """
-    services = SERVICE_PAM_FILES.get(location, [])
+    services = _location_services(location)
     svc_list = " ".join(s for s in services if re.match(r"^[A-Za-z0-9._-]+$", s))
     fp_opts = f"max-tries={int(max_tries)} timeout={int(timeout)}"
+    if location == "Lock screen" and _is_omarchy_lock():
+        # Quickshell offers fingerprint only while this file exists. Preserve
+        # the entire original stack while disabled; never add fingerprint to
+        # the parallel password service or weaken its required auth control.
+        return f'''set -eu
+f="{PAM_DIR}/omarchy-lock-fingerprint"
+backup="$f.fprintd-manager-disabled"
+if [ "{int(enable)}" = 1 ]; then
+  if [ ! -f "$f" ]; then
+    if [ -f "$backup" ]; then
+      mv "$backup" "$f"
+    else
+      printf '%s\\n' '#%PAM-1.0' 'auth required pam_fprintd.so {fp_opts} {PAM_MARK}' 'account include system-local-login' > "$f"
+      chmod 644 "$f"
+    fi
+  fi
+  sed -i -E '/^[[:space:]]*auth[[:space:]]/ {{ /pam_fprintd\\.so/ {{ s/[[:space:]]+max-tries=[^[:space:]#]+//g; s/[[:space:]]+timeout=[^[:space:]#]+//g; s/pam_fprintd\\.so/pam_fprintd.so {fp_opts}/; }} }}' "$f"
+else
+  if [ -f "$f" ]; then
+    [ ! -e "$backup" ] || {{ echo 'Disabled PAM backup already exists' >&2; exit 1; }}
+    mv "$f" "$backup"
+  fi
+fi'''
     en = "1" if enable else "0"
     # INS keeps literal \t; awk -v converts them to tabs when writing the line.
     ins = f"auth\\tsufficient\\tpam_fprintd.so\\t{fp_opts}\\t{PAM_MARK}"
