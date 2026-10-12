@@ -6,6 +6,8 @@
 fprintd 本体の D-Bus サービス、コマンドラインツール、PAM モジュールを含み、
 `fprintd` を提供するパッケージとして利用できます。
 
+Lock screen トグルは Omarchy Quattro の専用 PAM サービスと従来の hyprlock に対応します。Quattro ではオフ時に指紋用設定を退避し、オン時に復元します。変更は次回ロック時に反映されます。
+
 ## manager の出典と謝辞
 
 指紋管理 GUI `fprintd-manager` とデスクトップファイルは、Mahmud Farooque 氏の

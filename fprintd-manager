@@ -120,6 +120,8 @@ SERVICE_PAM_FILES = {
         "login",                 # TTY login, and COSMIC's greetd service = login
     ],
     "Lock screen": [
+        "omarchy-lock-fingerprint",  # Omarchy Quattro / Quickshell
+        "hyprlock",              # Omarchy 3 / Hyprland
         "kde-fingerprint",       # KDE Plasma 6 — dedicated fingerprint stack (native)
         "kscreenlocker",         # KDE Plasma 6
         "kscreenlocker_greet",   # KDE Plasma 6 (alt)
@@ -430,6 +432,9 @@ def get_pam_auth_locations():
 
     locations = {}
     for name, files in SERVICE_PAM_FILES.items():
+        if name == "Lock screen" and _is_omarchy_lock():
+            locations[name] = _has_fprintd_in_stack("omarchy-lock-fingerprint")
+            continue
         enabled = False
         any_file_present = False
         for f in files:
@@ -451,6 +456,13 @@ def run_as_root(cmd_str):
     return run_cmd(["pkexec", "bash", "-c", cmd_str], timeout=60)
 
 
+def _is_omarchy_lock():
+    return any(os.path.exists(_pam_path(service)) for service in (
+        "omarchy-lock-password", "omarchy-lock-fingerprint",
+        "omarchy-lock-fingerprint.fprintd-manager-disabled",
+    ))
+
+
 def pam_toggle_cmd(location, enable, max_tries=7, timeout=30):
     """Build a root bash script that enables/disables fingerprint for one auth
     location by managing that service's own PAM file — independently of the others.
@@ -468,6 +480,29 @@ def pam_toggle_cmd(location, enable, max_tries=7, timeout=30):
     services = SERVICE_PAM_FILES.get(location, [])
     svc_list = " ".join(s for s in services if re.match(r"^[A-Za-z0-9._-]+$", s))
     fp_opts = f"max-tries={int(max_tries)} timeout={int(timeout)}"
+    if location == "Lock screen" and _is_omarchy_lock():
+        # Quickshell offers fingerprint only while this file exists. Preserve
+        # the entire original stack while disabled; never add fingerprint to
+        # the parallel password service or weaken its required auth control.
+        return f'''set -eu
+f="{PAM_DIR}/omarchy-lock-fingerprint"
+backup="$f.fprintd-manager-disabled"
+if [ "{int(enable)}" = 1 ]; then
+  if [ ! -f "$f" ]; then
+    if [ -f "$backup" ]; then
+      mv "$backup" "$f"
+    else
+      printf '%s\\n' '#%PAM-1.0' 'auth required pam_fprintd.so {fp_opts} {PAM_MARK}' 'account include system-local-login' > "$f"
+      chmod 644 "$f"
+    fi
+  fi
+  sed -i -E '/^[[:space:]]*auth[[:space:]]/ {{ /pam_fprintd\\.so/ {{ s/[[:space:]]+max-tries=[^[:space:]#]+//g; s/[[:space:]]+timeout=[^[:space:]#]+//g; s/pam_fprintd\\.so/pam_fprintd.so {fp_opts}/; }} }}' "$f"
+else
+  if [ -f "$f" ]; then
+    [ ! -e "$backup" ] || {{ echo 'Disabled PAM backup already exists' >&2; exit 1; }}
+    mv "$f" "$backup"
+  fi
+fi'''
     en = "1" if enable else "0"
     # INS keeps literal \t; awk -v converts them to tabs when writing the line.
     ins = f"auth\\tsufficient\\tpam_fprintd.so\\t{fp_opts}\\t{PAM_MARK}"

@@ -6,6 +6,8 @@ English | [Japanese](README_ja.md)
 It includes fprintd's D-Bus service, command-line tools, and PAM module,
 and provides the `fprintd` package for dependency compatibility.
 
+The Lock screen toggle supports Omarchy Quattro’s dedicated PAM service and hyprlock. On Quattro, disabling fingerprint moves its PAM file aside; enabling restores it. Changes take effect the next time you lock the screen.
+
 ## Manager origin and acknowledgments
 
 The `fprintd-manager` GUI and its desktop entry are adapted from
