@@ -4,6 +4,7 @@ version = 1
 path = [
     "PKGBUILD",
     "README.md",
+    "README_ja.md",
     "keys/**",
     ".SRCINFO",
     ".nvchecker.toml",
@@ -20,3 +21,9 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = ["fprintd-manager", "fprintd-manager.desktop"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Mahmud Farooque"
+SPDX-License-Identifier = "MIT"

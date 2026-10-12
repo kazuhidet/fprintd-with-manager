@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Mahmud Farooque
+# SPDX-License-Identifier: MIT
+# Adapted from https://github.com/mmhfarooque/chipsailing-cs9711-fingerprint-linux
+[Desktop Entry]
+Type=Application
+Name=fprintd Fingerprint Manager
+Comment=Manage fingerprints using fprintd
+Name[ja]=fprintd 指紋マネージャー
+Comment[ja]=fprintd を使用して 指紋を登録・管理します
+Exec=fprintd-manager
+TryExec=fprintd-manager
+Icon=dialog-password
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=fingerprint;scanner;fprintd;biometric;
