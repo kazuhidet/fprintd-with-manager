@@ -1,7 +1,7 @@
 pkgbase = fprintd-with-manager
 	pkgdesc = fprintd extended with a fingerprint manager GUI, including all fprintd functionality
 	pkgver = 1.94.5
-	pkgrel = 3
+	pkgrel = 4
 	url = https://fprint.freedesktop.org/
 	arch = x86_64
 	arch = aarch64
@@ -39,7 +39,7 @@ pkgbase = fprintd-with-manager
 	source = README_ja.md
 	validpgpkeys = D4C501DA48EB797A081750939449C2F50996635F
 	b2sums = e9fec866da871cdae2f3312b8428209237f94312c6baa622cb1d71960d2de422c7aab339b75c05607cb915da28ad0135c9cf3538fbde9df1700a36d5f9547ba8
-	b2sums = 35d5c18c31b8c601ef47a939a7fad82b268bfa9e50ee24b28d085936353aa7bb2cf1753da391902dcb2ccf688d51ed0b1ad7b24bbde71a04172fae18bde3899d
+	b2sums = 75f646fcc236d19887241a5906ed67f7de1ce1b0bc8addb025ae2a2a36f3ec3108661e8f23549ac496fff84deab093eefa15d766a9a678c48ba301b76e7d942d
 	b2sums = ace225b3d44034f987c1de794feca633795fe6c49db67ab9543f4fb5d0dc8e819ca357dddb0209767d1b17721007227dc665ca2fd62496c69030306717690ec0
 	b2sums = dd7262b522112d8371ca0eb51a66bb8391ef666a877700e44139dedbdb62868616ebcc721b9d79e1c2a4c8cbd85d61966f73d892d85d55623d08d4290557ca45
 	b2sums = 3d95edaf74b9a1fc3324f2ae091717adcdd2735fd9850d29d1e7ffa2cfd7ecf7e759ebd1b987758f87e08983f06a59587f941f2671fa6ceafdf4a4f41013521c

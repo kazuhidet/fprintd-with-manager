@@ -59,13 +59,18 @@ _sh.setFormatter(logging.Formatter("[%(levelname)s] %(message)s"))
 _sh.setLevel(logging.INFO)
 log.addHandler(_sh)
 
+# Substituted with "$pkgver-$pkgrel" by the PKGBUILD at package time.
+PKG_VERSION = "@PKG_VERSION@"
+
 def get_app_version():
-    """Read version from VERSION file."""
+    """Return the packaged version, falling back to a VERSION file when run from source."""
+    if not PKG_VERSION.startswith("@"):
+        return PKG_VERSION
     try:
         with open(os.path.join(SCRIPT_DIR, "VERSION")) as f:
             return f.read().strip()
     except FileNotFoundError:
-        return "fprintd"
+        return "dev"
 
 APP_VERSION = get_app_version()
 
