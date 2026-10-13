@@ -51,7 +51,7 @@ source=(
   README_ja.md
 )
 b2sums=('e9fec866da871cdae2f3312b8428209237f94312c6baa622cb1d71960d2de422c7aab339b75c05607cb915da28ad0135c9cf3538fbde9df1700a36d5f9547ba8'
-  'e426be2ba27b2c49af09d57e26ece10d124d4e5d1b73844f596a29b893205bd63c28e7103e99267c108b9d8a1de3ec369bece93a5205f4025f1a6b9df3a5c3c7'
+  '75f646fcc236d19887241a5906ed67f7de1ce1b0bc8addb025ae2a2a36f3ec3108661e8f23549ac496fff84deab093eefa15d766a9a678c48ba301b76e7d942d'
   'ace225b3d44034f987c1de794feca633795fe6c49db67ab9543f4fb5d0dc8e819ca357dddb0209767d1b17721007227dc665ca2fd62496c69030306717690ec0'
   'dd7262b522112d8371ca0eb51a66bb8391ef666a877700e44139dedbdb62868616ebcc721b9d79e1c2a4c8cbd85d61966f73d892d85d55623d08d4290557ca45'
   'de15fdd101959e6b6ac926d115ce96008a6a5a6707cc13062393416ef4e606a7a6d0c32a25cf4ca189099620fe0da268e6cf92df66dac614239483c282a531bb'
@@ -89,6 +89,7 @@ package() {
   install -Dm644 "$startdir/README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
   install -Dm644 "$startdir/README_ja.md" "$pkgdir/usr/share/doc/$pkgname/README_ja.md"
   install -Dm755 "$srcdir/fprintd-manager" "$pkgdir/usr/bin/fprintd-manager"
+  sed -i "s/@PKG_VERSION@/$pkgver-$pkgrel/" "$pkgdir/usr/bin/fprintd-manager"
   install -Dm644 "$srcdir/fprintd-manager.desktop" "$pkgdir/usr/share/applications/fprintd-manager.desktop"
 }
 

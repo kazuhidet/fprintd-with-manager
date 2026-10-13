@@ -59,13 +59,18 @@ _sh.setFormatter(logging.Formatter("[%(levelname)s] %(message)s"))
 _sh.setLevel(logging.INFO)
 log.addHandler(_sh)
 
+# Substituted with "$pkgver-$pkgrel" by the PKGBUILD at package time.
+PKG_VERSION = "@PKG_VERSION@"
+
 def get_app_version():
-    """Read version from VERSION file."""
+    """Return the packaged version, falling back to a VERSION file when run from source."""
+    if not PKG_VERSION.startswith("@"):
+        return PKG_VERSION
     try:
         with open(os.path.join(SCRIPT_DIR, "VERSION")) as f:
             return f.read().strip()
     except FileNotFoundError:
-        return "fprintd"
+        return "dev"
 
 APP_VERSION = get_app_version()
 
@@ -134,6 +139,20 @@ SERVICE_PAM_FILES = {
     ],
     "sudo": ["sudo"],
     "polkit": ["polkit-1", "polkit-1-kde-1"],
+}
+
+# PAM services used by each display manager, keyed by its systemd unit name.
+# Leftover packages (e.g. gdm installed next to sddm on Omarchy) ship their
+# own PAM files, including a native gdm-fingerprint; without this the login
+# toggle would edit only that unused service and the real greeter stays as-is.
+DISPLAY_MANAGER_PAM_FILES = {
+    "plasmalogin": ["plasmalogin"],
+    "sddm": ["sddm"],
+    "gdm": ["gdm-password", "gdm-fingerprint"],
+    "greetd": ["greetd", "cosmic-greeter", "login"],
+    "cosmic-greeter": ["cosmic-greeter", "greetd", "login"],
+    "lightdm": ["lightdm"],
+    "lxdm": ["lxdm"],
 }
 
 FINGERS = [
@@ -431,10 +450,11 @@ def get_pam_auth_locations():
     )
 
     locations = {}
-    for name, files in SERVICE_PAM_FILES.items():
+    for name in SERVICE_PAM_FILES:
         if name == "Lock screen" and _is_omarchy_lock():
             locations[name] = _has_fprintd_in_stack("omarchy-lock-fingerprint")
             continue
+        files = _location_services(name)
         enabled = False
         any_file_present = False
         for f in files:
@@ -454,6 +474,27 @@ def get_pam_auth_locations():
 def run_as_root(cmd_str):
     """Run a shell command as root via pkexec."""
     return run_cmd(["pkexec", "bash", "-c", cmd_str], timeout=60)
+
+
+def _active_display_manager():
+    """systemd unit name of the enabled display manager, or None."""
+    try:
+        target = os.path.realpath("/etc/systemd/system/display-manager.service")
+    except OSError:
+        return None
+    unit = os.path.basename(target)
+    if not unit.endswith(".service") or unit == "display-manager.service":
+        return None
+    return unit[:-len(".service")]
+
+
+def _location_services(location):
+    """PAM services that actually serve `location` on this machine."""
+    if location == "Login screen":
+        dm = _active_display_manager()
+        if dm in DISPLAY_MANAGER_PAM_FILES:
+            return DISPLAY_MANAGER_PAM_FILES[dm]
+    return SERVICE_PAM_FILES.get(location, [])
 
 
 def _is_omarchy_lock():
@@ -477,7 +518,7 @@ def pam_toggle_cmd(location, enable, max_tries=7, timeout=30):
     The full vendor stack (incl. the password path) is always preserved, and the
     fprintd line is only ever 'sufficient', so password auth never breaks.
     """
-    services = SERVICE_PAM_FILES.get(location, [])
+    services = _location_services(location)
     svc_list = " ".join(s for s in services if re.match(r"^[A-Za-z0-9._-]+$", s))
     fp_opts = f"max-tries={int(max_tries)} timeout={int(timeout)}"
     if location == "Lock screen" and _is_omarchy_lock():
