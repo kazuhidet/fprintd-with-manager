@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "fprintd.manager",
+  "name": "Fingerprint Manager",
+  "version": "1.0.0",
+  "description": "Register, verify and manage fingerprints and PAM authentication",
+  "kinds": ["panel"],
+  "entryPoints": {"panel": "Panel.qml"}
+}
