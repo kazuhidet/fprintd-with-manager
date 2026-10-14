@@ -8,6 +8,8 @@ and provides the `fprintd` package for dependency compatibility.
 
 The Lock screen toggle supports Omarchy Quattro’s dedicated PAM service and hyprlock. On Quattro, disabling fingerprint moves its PAM file aside; enabling restores it. Changes take effect the next time you lock the screen.
 
+When the Login screen toggle is enabled with SDDM, fingerprint authentication does not start as soon as the login screen appears. SDDM runs PAM, including `pam_fprintd`, only after the greeter submits a login request; with the Omarchy SDDM theme this happens when you press Enter. Press Enter (the password field may be left empty), then touch the sensor. If the fingerprint is not accepted, the password entered in the field is used as a fallback.
+
 ## Manager origin and acknowledgments
 
 The `fprintd-manager` GUI and its desktop entry are adapted from

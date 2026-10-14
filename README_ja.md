@@ -8,6 +8,8 @@ fprintd 本体の D-Bus サービス、コマンドラインツール、PAM モ�
 
 Lock screen トグルは Omarchy Quattro の専用 PAM サービスと従来の hyprlock に対応します。Quattro ではオフ時に指紋用設定を退避し、オン時に復元します。変更は次回ロック時に反映されます。
 
+SDDM で Login screen の指紋認証を有効にしている場合、ログイン画面を表示しただけでは指紋認証は始まりません。SDDM は画面からログイン要求が送られて初めて `pam_fprintd` を含む PAM 認証を開始し、Omarchy の SDDM テーマでは Enter キーを押したときに要求が送られます。Enter キーを押してから（パスワード欄は空のままで構いません）センサーに指を置いてください。指紋が認証されなかった場合は、入力欄のパスワードで認証されます。
+
 ## manager の出典と謝辞
 
 指紋管理 GUI `fprintd-manager` とデスクトップファイルは、Mahmud Farooque 氏の
