@@ -7,7 +7,7 @@
 
 pkgname=fprintd-with-manager
 pkgver=1.94.5
-pkgrel=4
+pkgrel=5
 pkgdesc="fprintd extended with a fingerprint manager GUI, including all fprintd functionality"
 url="https://fprint.freedesktop.org/"
 arch=(x86_64 aarch64)
@@ -24,6 +24,7 @@ depends=(
   systemd-libs
 )
 makedepends=(
+  gettext
   git
   glib2-devel
   gtk-doc
@@ -51,8 +52,8 @@ source=(
   README_ja.md
 )
 b2sums=('e9fec866da871cdae2f3312b8428209237f94312c6baa622cb1d71960d2de422c7aab339b75c05607cb915da28ad0135c9cf3538fbde9df1700a36d5f9547ba8'
-  '75f646fcc236d19887241a5906ed67f7de1ce1b0bc8addb025ae2a2a36f3ec3108661e8f23549ac496fff84deab093eefa15d766a9a678c48ba301b76e7d942d'
-  'ace225b3d44034f987c1de794feca633795fe6c49db67ab9543f4fb5d0dc8e819ca357dddb0209767d1b17721007227dc665ca2fd62496c69030306717690ec0'
+  '38f65b285ee0606e7ee95d22b751a8d487651db5b3b0764a31cd785433f4ec9739fac4150bbe420e034d200929099f5a92ea03f3052b7717e746fc7b325b958f'
+  'a77c27ba391cbdf9841d2c21cf1255b78d0c0c218b06f64cabe5874ce94cc2973b8d84625c8255a0d5481c038118ce6b278592a7163a7c3604e62bf4fdfbfe5d'
   'dd7262b522112d8371ca0eb51a66bb8391ef666a877700e44139dedbdb62868616ebcc721b9d79e1c2a4c8cbd85d61966f73d892d85d55623d08d4290557ca45'
   'de15fdd101959e6b6ac926d115ce96008a6a5a6707cc13062393416ef4e606a7a6d0c32a25cf4ca189099620fe0da268e6cf92df66dac614239483c282a531bb'
   '7f51f297c23157963769988a929d6721f4b8c32ac94cd976bc87c053144483e36d41f2ba53b08d8628173a658d89553c88efd0aed9a34b101c58f2e990e59526')
@@ -75,6 +76,11 @@ build() {
 
   arch-meson fprintd build "${meson_options[@]}"
   meson compile -C build
+
+  local lang
+  for lang in $(<"$startdir/po/LINGUAS"); do
+    msgfmt --check -o "fprintd-manager-$lang.mo" "$startdir/po/$lang.po"
+  done
 }
 
 check() {
@@ -91,6 +97,12 @@ package() {
   install -Dm755 "$srcdir/fprintd-manager" "$pkgdir/usr/bin/fprintd-manager"
   sed -i "s/@PKG_VERSION@/$pkgver-$pkgrel/" "$pkgdir/usr/bin/fprintd-manager"
   install -Dm644 "$srcdir/fprintd-manager.desktop" "$pkgdir/usr/share/applications/fprintd-manager.desktop"
+
+  local lang
+  for lang in $(<"$startdir/po/LINGUAS"); do
+    install -Dm644 "$srcdir/fprintd-manager-$lang.mo" \
+      "$pkgdir/usr/share/locale/$lang/LC_MESSAGES/fprintd-manager.mo"
+  done
 }
 
 # vim:set sw=2 sts=-1 et:

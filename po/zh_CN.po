@@ -1,0 +1,633 @@
+# Chinese (simplified) translation for fprintd-manager.
+# SPDX-FileCopyrightText: 2026 Mahmud Farooque
+# SPDX-License-Identifier: MIT
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fprintd-manager\n"
+"Report-Msgid-Bugs-To: https://github.com/mmhfarooque/chipsailing-cs9711-"
+"fingerprint-linux/issues\n"
+"POT-Creation-Date: 2026-10-29 22:11+0900\n"
+"PO-Revision-Date: 2026-10-29 00:00+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Translators: separator between items in a list, e.g. "sudo, polkit".
+#: fprintd-manager:69
+msgid ", "
+msgstr "、"
+
+#: fprintd-manager:181
+msgid "Login screen"
+msgstr "登录界面"
+
+#: fprintd-manager:182
+msgid "Lock screen"
+msgstr "锁屏"
+
+#: fprintd-manager:205
+msgid "Right index finger"
+msgstr "右手食指"
+
+#: fprintd-manager:206
+msgid "Left index finger"
+msgstr "左手食指"
+
+#: fprintd-manager:207
+msgid "Right thumb"
+msgstr "右手拇指"
+
+#: fprintd-manager:208
+msgid "Left thumb"
+msgstr "左手拇指"
+
+#: fprintd-manager:209
+msgid "Right middle finger"
+msgstr "右手中指"
+
+#: fprintd-manager:210
+msgid "Left middle finger"
+msgstr "左手中指"
+
+#: fprintd-manager:211
+msgid "Right ring finger"
+msgstr "右手无名指"
+
+#: fprintd-manager:212
+msgid "Left ring finger"
+msgstr "左手无名指"
+
+#: fprintd-manager:213
+msgid "Right little finger"
+msgstr "右手小指"
+
+#: fprintd-manager:214
+msgid "Left little finger"
+msgstr "左手小指"
+
+#: fprintd-manager:321
+#, python-brace-format
+msgid "Command timed out after {seconds}s"
+msgstr "命令在 {seconds} 秒后超时"
+
+#: fprintd-manager:324
+#, python-brace-format
+msgid "Command not found: {command}"
+msgstr "未找到命令：{command}"
+
+#: fprintd-manager:692 fprintd-manager:1473
+msgid "fprintd Fingerprint Manager"
+msgstr "fprintd 指纹管理器"
+
+#: fprintd-manager:710
+msgid "Refresh status"
+msgstr "刷新状态"
+
+#: fprintd-manager:718
+msgid "About this app"
+msgstr "关于此应用"
+
+#: fprintd-manager:799
+msgid "Welcome! Let's set up your fingerprint"
+msgstr "欢迎！来设置您的指纹吧"
+
+#: fprintd-manager:801
+msgid ""
+"Your fingerprint scanner is connected and the driver is installed.\n"
+"\n"
+"To start using fingerprint login, you need to enroll a finger. Follow the "
+"prompts to touch the scanner repeatedly.\n"
+"\n"
+"By default, your RIGHT INDEX FINGER will be enrolled. If you're left-handed, "
+"you can change the finger in the dropdown below the Enroll button.\n"
+"\n"
+"Click 'Start Enrollment' to begin — then place your finger on the scanner "
+"when prompted."
+msgstr ""
+"您的指纹扫描器已连接，驱动程序已安装。\n"
+"\n"
+"要开始使用指纹登录，需要先录入一根手指。请按照提示反复触摸扫描器。\n"
+"\n"
+"默认录入“右手食指”。如果您是左撇子，可以在“录入”按钮下方的下拉列表中更换手"
+"指。\n"
+"\n"
+"点击“开始录入”，然后在提示时将手指放在扫描器上。"
+
+#: fprintd-manager:809
+msgid "Later"
+msgstr "稍后"
+
+#: fprintd-manager:810
+msgid "Start Enrollment"
+msgstr "开始录入"
+
+#: fprintd-manager:845
+#, python-brace-format
+msgid "Developed by {author}"
+msgstr "开发者：{author}"
+
+#: fprintd-manager:848
+msgid "Source and issues on GitHub"
+msgstr "GitHub 上的源代码与问题反馈"
+
+#: fprintd-manager:853
+#, python-brace-format
+msgid ""
+"fprintd Fingerprint Manager v{version} — MIT licensed. Uses the system "
+"fprintd and libfprint packages."
+msgstr ""
+"fprintd 指纹管理器 v{version} — 采用 MIT 许可证。使用系统的 fprintd 和 "
+"libfprint 软件包。"
+
+#: fprintd-manager:888 fprintd-manager:915 fprintd-manager:1380
+msgid "Checking…"
+msgstr "正在检查…"
+
+#: fprintd-manager:897
+msgid "Scanner"
+msgstr "扫描器"
+
+#: fprintd-manager:898
+msgid "Driver"
+msgstr "驱动"
+
+#: fprintd-manager:899
+msgid "Fingers"
+msgstr "手指"
+
+#: fprintd-manager:908
+msgid "Fingerprint Enrollment"
+msgstr "指纹录入"
+
+#: fprintd-manager:909
+msgid "Touch the scanner repeatedly when prompted by fprintd"
+msgstr "在 fprintd 提示时反复触摸扫描器"
+
+#: fprintd-manager:914
+msgid "Enrollment Status"
+msgstr "录入状态"
+
+#: fprintd-manager:923
+msgid "Finger to enroll"
+msgstr "要录入的手指"
+
+#: fprintd-manager:943 fprintd-manager:1696
+msgid "Enroll"
+msgstr "录入"
+
+#: fprintd-manager:947
+msgid "Test Verify"
+msgstr "测试验证"
+
+#: fprintd-manager:951 fprintd-manager:1205
+msgid "Delete All"
+msgstr "全部删除"
+
+#: fprintd-manager:955 fprintd-manager:971 fprintd-manager:1204
+msgid "Cancel"
+msgstr "取消"
+
+#: fprintd-manager:967
+msgid "Fingerprints already enrolled"
+msgstr "已录入指纹"
+
+#: fprintd-manager:968
+msgid ""
+"You already have fingerprints enrolled. Enrolling a new finger will add to "
+"the existing ones. To start fresh, delete all first."
+msgstr ""
+"您已录入过指纹。录入新手指会添加到现有指纹中。若要重新开始，请先全部删除。"
+
+#: fprintd-manager:972 fprintd-manager:1688
+msgid "Add Another Finger"
+msgstr "添加其他手指"
+
+#: fprintd-manager:993
+#, python-brace-format
+msgid "Preparing {finger}…"
+msgstr "正在准备{finger}…"
+
+#: fprintd-manager:1008
+msgid "Deletion failed"
+msgstr "删除失败"
+
+#: fprintd-manager:1013
+#, python-brace-format
+msgid "Enrolling {finger}… Touch the scanner NOW"
+msgstr "正在录入{finger}… 请立即触摸扫描器"
+
+#: fprintd-manager:1029 fprintd-manager:1081
+msgid "Cancelled"
+msgstr "已取消"
+
+#: fprintd-manager:1040
+#, python-brace-format
+msgid "Touch {count} — good, keep going!"
+msgstr "第 {count} 次 — 很好，请继续！"
+
+#: fprintd-manager:1045 fprintd-manager:1106
+msgid "Enrollment complete!"
+msgstr "录入完成！"
+
+#: fprintd-manager:1051
+#, python-brace-format
+msgid "Touch {count} — bad read, try again"
+msgstr "第 {count} 次 — 读取不佳，请重试"
+
+#: fprintd-manager:1057
+#, python-brace-format
+msgid "Touch {count} — too short, hold longer"
+msgstr "第 {count} 次 — 时间太短，请按住久一点"
+
+#: fprintd-manager:1063
+#, python-brace-format
+msgid "Touch {count} — center your finger"
+msgstr "第 {count} 次 — 请将手指放在中央"
+
+#: fprintd-manager:1069
+#, python-brace-format
+msgid "Touch {count} — lift and touch again"
+msgstr "第 {count} 次 — 请抬起后再次触摸"
+
+#: fprintd-manager:1072
+msgid "Enrollment failed — try again"
+msgstr "录入失败 — 请重试"
+
+#: fprintd-manager:1075
+msgid "Storage full — delete old prints first"
+msgstr "存储已满 — 请先删除旧指纹"
+
+#: fprintd-manager:1082
+msgid "Enrollment ended without completion"
+msgstr "录入未完成即已结束"
+
+#: fprintd-manager:1086
+#, python-brace-format
+msgid "Error: {error}"
+msgstr "错误：{error}"
+
+#: fprintd-manager:1102 fprintd-manager:1129
+msgid "Enrollment saved."
+msgstr "录入已保存。"
+
+#: fprintd-manager:1107
+msgid ""
+"Fingerprint recorded successfully.\n"
+"\n"
+"Would you like to do a quick verification touch to confirm your fingerprint "
+"is working?"
+msgstr ""
+"指纹已成功记录。\n"
+"\n"
+"是否进行一次快速验证，确认指纹可以正常使用？"
+
+#: fprintd-manager:1111
+msgid "Skip"
+msgstr "跳过"
+
+#: fprintd-manager:1112
+msgid "Verify Now"
+msgstr "立即验证"
+
+#: fprintd-manager:1124
+msgid "Touch the scanner once to verify…"
+msgstr "请触摸扫描器一次以验证…"
+
+#: fprintd-manager:1125
+msgid "Verification — touch the scanner once…"
+msgstr "验证中 — 请触摸扫描器一次…"
+
+#: fprintd-manager:1128
+msgid "Enrollment saved — you're all set!"
+msgstr "录入已保存 — 一切就绪！"
+
+#: fprintd-manager:1150
+msgid "Fingerprint verified! Everything is working."
+msgstr "指纹验证成功！一切正常。"
+
+#: fprintd-manager:1152
+msgid "Fingerprint verified! You're all set."
+msgstr "指纹验证成功！一切就绪。"
+
+#: fprintd-manager:1154
+msgid "Verification failed — try Test Verify again"
+msgstr "验证失败 — 请使用“测试验证”重试"
+
+#: fprintd-manager:1156
+msgid "Verification didn't match — try again with Test Verify"
+msgstr "验证不匹配 — 请使用“测试验证”重试"
+
+#: fprintd-manager:1174
+#, python-brace-format
+msgid "Verifying {finger} — touch the scanner…"
+msgstr "正在验证{finger} — 请触摸扫描器…"
+
+#: fprintd-manager:1181
+msgid "Fingerprint verified!"
+msgstr "指纹验证成功！"
+
+#: fprintd-manager:1183
+msgid "No match — try again or re-enroll"
+msgstr "不匹配 — 请重试或重新录入"
+
+#: fprintd-manager:1185
+msgid "Verification timed out"
+msgstr "验证超时"
+
+#: fprintd-manager:1201
+msgid "Delete all fingerprints?"
+msgstr "删除所有指纹？"
+
+#: fprintd-manager:1202
+msgid "You will need to re-enroll after deletion."
+msgstr "删除后需要重新录入。"
+
+#: fprintd-manager:1240
+msgid "All fingerprints deleted"
+msgstr "已删除所有指纹"
+
+#: fprintd-manager:1242
+#, python-brace-format
+msgid "Delete failed: {error}"
+msgstr "删除失败：{error}"
+
+#: fprintd-manager:1255
+msgid "Authentication"
+msgstr "认证"
+
+#: fprintd-manager:1256
+msgid "Fingerprint attempts and timeout before password fallback"
+msgstr "回退到密码前的指纹尝试次数和超时"
+
+#: fprintd-manager:1266
+msgid "Max Attempts"
+msgstr "最大尝试次数"
+
+#: fprintd-manager:1267
+msgid "Number of fingerprint tries before password fallback"
+msgstr "回退到密码前允许的指纹尝试次数"
+
+#: fprintd-manager:1275
+msgid "Timeout (seconds)"
+msgstr "超时（秒）"
+
+#: fprintd-manager:1276
+msgid "Total time window for all fingerprint attempts"
+msgstr "所有指纹尝试的总时长"
+
+#: fprintd-manager:1284
+msgid "Requires your login password (system files need admin access)"
+msgstr "需要您的登录密码（修改系统文件需要管理员权限）"
+
+#: fprintd-manager:1287 fprintd-manager:1316 fprintd-manager:1341
+msgid "Apply PAM Settings"
+msgstr "应用 PAM 设置"
+
+#: fprintd-manager:1300 fprintd-manager:1409
+msgid "Applying…"
+msgstr "正在应用…"
+
+#: fprintd-manager:1318
+msgid ""
+"Nothing enabled yet — turn on a switch under “Where to Use Fingerprint”; "
+"these settings apply with it"
+msgstr "尚未启用任何项 — 请在“指纹使用位置”下打开一个开关，这些设置会随之生效"
+
+#: fprintd-manager:1344
+#, python-brace-format
+msgid "PAM updated: {tries} tries, {timeout}s timeout (applied to: {places})"
+msgstr "PAM 已更新：尝试 {tries} 次，超时 {timeout} 秒（应用于：{places}）"
+
+#: fprintd-manager:1350
+#, python-brace-format
+msgid "Failed: {error}"
+msgstr "失败：{error}"
+
+#: fprintd-manager:1364
+msgid "Where to Use Fingerprint"
+msgstr "指纹使用位置"
+
+#: fprintd-manager:1365
+msgid ""
+"Turn fingerprint on or off for each place independently — password always "
+"still works"
+msgstr "可分别为每个位置开启或关闭指纹 — 密码始终可用"
+
+#: fprintd-manager:1395
+msgid "On"
+msgstr "开"
+
+#: fprintd-manager:1395
+msgid "Off"
+msgstr "关"
+
+#: fprintd-manager:1421
+#, python-brace-format
+msgid "Couldn't change “{place}” — authentication cancelled or failed"
+msgstr "无法更改“{place}” — 认证已取消或失败"
+
+#: fprintd-manager:1424
+#, python-brace-format
+msgid "Fingerprint enabled for {place}"
+msgstr "已为{place}启用指纹"
+
+#: fprintd-manager:1426
+#, python-brace-format
+msgid "Fingerprint disabled for {place}"
+msgstr "已为{place}停用指纹"
+
+#: fprintd-manager:1436
+msgid "Maintenance"
+msgstr "维护"
+
+#: fprintd-manager:1440
+msgid "Managed by the package manager"
+msgstr "由包管理器管理"
+
+#: fprintd-manager:1441
+msgid "Update fprintd and the compatible libfprint package using pacman."
+msgstr "请使用 pacman 更新 fprintd 及兼容的 libfprint 软件包。"
+
+#: fprintd-manager:1445
+msgid "Diagnostics"
+msgstr "诊断"
+
+#: fprintd-manager:1446
+#, python-brace-format
+msgid "Log: {path}"
+msgstr "日志：{path}"
+
+#: fprintd-manager:1450 fprintd-manager:1519
+msgid "Activity Log"
+msgstr "活动日志"
+
+#: fprintd-manager:1451
+msgid "View all events for troubleshooting"
+msgstr "查看所有事件以排查问题"
+
+#: fprintd-manager:1456
+msgid "View Log"
+msgstr "查看日志"
+
+#: fprintd-manager:1459
+msgid "Clear Log"
+msgstr "清除日志"
+
+#: fprintd-manager:1484
+msgid ""
+"Fingerprint manager for readers supported by fprintd on Linux.\n"
+"\n"
+"Adapted from chipsailing-cs9711-fingerprint-linux for the packaged fprintd "
+"service. Thank you to Mahmud Farooque and the upstream contributors. The "
+"original GUI is MIT licensed. The upstream community libfprint driver is "
+"LGPL-2.1-or-later, from the archeYR/libfprint-CS9711 community fork."
+msgstr ""
+"适用于 Linux 上 fprintd 支持的指纹读取器的指纹管理器。\n"
+"\n"
+"改编自 chipsailing-cs9711-fingerprint-linux，适配打包的 fprintd 服务。感谢 "
+"Mahmud Farooque 及上游贡献者。原始图形界面采用 MIT 许可证。上游社区 "
+"libfprint 驱动采用 LGPL-2.1-or-later 许可证，来自 archeYR/libfprint-CS9711 社"
+"区分支。"
+
+#. Translators: replace with your names, one per line, to be credited
+#. in the About dialog.
+#: fprintd-manager:1492
+msgid "translator-credits"
+msgstr ""
+
+#: fprintd-manager:1496
+msgid "Developer on GitHub"
+msgstr "GitHub 上的开发者"
+
+#: fprintd-manager:1497
+msgid "Report an issue"
+msgstr "报告问题"
+
+#: fprintd-manager:1498
+msgid "Upstream driver"
+msgstr "上游驱动"
+
+#: fprintd-manager:1515
+msgid "(No log file yet)"
+msgstr "（尚无日志文件）"
+
+#: fprintd-manager:1528
+msgid "Copy log to clipboard"
+msgstr "复制日志到剪贴板"
+
+#: fprintd-manager:1551
+msgid "Log copied to clipboard"
+msgstr "日志已复制到剪贴板"
+
+#: fprintd-manager:1573
+msgid "Log cleared"
+msgstr "日志已清除"
+
+#: fprintd-manager:1621
+msgid "Driver cannot load"
+msgstr "无法加载驱动"
+
+#: fprintd-manager:1622
+#, python-brace-format
+msgid ""
+"Missing {libraries} — a system library the driver was built against was "
+"upgraded. Update or rebuild your libfprint package."
+msgstr ""
+"缺少 {libraries} — 构建驱动时所依赖的系统库已升级。请更新或重新构建 "
+"libfprint 软件包。"
+
+#: fprintd-manager:1629
+msgid "Scanner not detected"
+msgstr "未检测到扫描器"
+
+#: fprintd-manager:1630
+msgid "Check the reader connection, libfprint support and the fprintd service."
+msgstr "请检查读取器连接、libfprint 支持情况以及 fprintd 服务。"
+
+#: fprintd-manager:1635
+msgid "Driver not installed"
+msgstr "未安装驱动"
+
+#: fprintd-manager:1636
+msgid "Install a compatible libfprint package and check the fprintd service."
+msgstr "请安装兼容的 libfprint 软件包并检查 fprintd 服务。"
+
+#: fprintd-manager:1641
+msgid "Ready to set up"
+msgstr "可以开始设置"
+
+#: fprintd-manager:1642
+msgid "Scanner and driver are working — enrol a finger to start using it."
+msgstr "扫描器和驱动工作正常 — 录入一根手指即可开始使用。"
+
+#: fprintd-manager:1647
+msgid "Fingerprint is ready"
+msgstr "指纹已就绪"
+
+#: fprintd-manager:1649
+#, python-brace-format
+msgid "Active for {places}."
+msgstr "已用于：{places}。"
+
+#: fprintd-manager:1652
+msgid ""
+"Enrolled, but not switched on anywhere yet — see Where to Use Fingerprint."
+msgstr "已录入，但尚未在任何位置启用 — 请查看“指纹使用位置”。"
+
+#: fprintd-manager:1665
+msgid "Scanner ✓"
+msgstr "扫描器 ✓"
+
+#: fprintd-manager:1665
+msgid "Scanner ✕"
+msgstr "扫描器 ✕"
+
+#: fprintd-manager:1668
+msgid "Driver ✓"
+msgstr "驱动 ✓"
+
+#: fprintd-manager:1668
+msgid "Driver broken"
+msgstr "驱动损坏"
+
+#: fprintd-manager:1668
+msgid "Driver ✕"
+msgstr "驱动 ✕"
+
+#: fprintd-manager:1671
+#, python-brace-format
+msgid "{count} finger"
+msgid_plural "{count} fingers"
+msgstr[0] "{count} 根手指"
+
+#: fprintd-manager:1672
+msgid "No fingers"
+msgstr "无手指"
+
+#: fprintd-manager:1678
+#, python-brace-format
+msgid "Driver cannot load — missing {libraries} (system OpenCV upgrade?)"
+msgstr "无法加载驱动 — 缺少 {libraries}（系统 OpenCV 是否已升级？）"
+
+#: fprintd-manager:1689
+msgid "Enrolled"
+msgstr "已录入"
+
+#: fprintd-manager:1691
+#, python-brace-format
+msgid "{count} finger: {names}"
+msgid_plural "{count} fingers: {names}"
+msgstr[0] "{count} 根：{names}"
+
+#: fprintd-manager:1697
+msgid "Not Enrolled"
+msgstr "未录入"
+
+#: fprintd-manager:1699
+msgid "No fingerprints enrolled — click Enroll to get started"
+msgstr "尚未录入指纹 — 点击“录入”开始"

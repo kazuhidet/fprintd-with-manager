@@ -23,7 +23,7 @@ SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
-path = ["fprintd-manager", "fprintd-manager.desktop"]
+path = ["fprintd-manager", "fprintd-manager.desktop", "po/**"]
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Mahmud Farooque"
 SPDX-License-Identifier = "MIT"
