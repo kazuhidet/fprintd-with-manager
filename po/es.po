@@ -1,0 +1,655 @@
+# Spanish translation for fprintd-manager.
+# SPDX-FileCopyrightText: 2026 Mahmud Farooque
+# SPDX-License-Identifier: MIT
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fprintd-manager\n"
+"Report-Msgid-Bugs-To: https://github.com/mmhfarooque/chipsailing-cs9711-"
+"fingerprint-linux/issues\n"
+"POT-Creation-Date: 2026-10-29 22:11+0900\n"
+"PO-Revision-Date: 2026-10-29 00:00+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Translators: separator between items in a list, e.g. "sudo, polkit".
+#: fprintd-manager:69
+msgid ", "
+msgstr ", "
+
+#: fprintd-manager:181
+msgid "Login screen"
+msgstr "Pantalla de inicio de sesión"
+
+#: fprintd-manager:182
+msgid "Lock screen"
+msgstr "Pantalla de bloqueo"
+
+#: fprintd-manager:205
+msgid "Right index finger"
+msgstr "Índice derecho"
+
+#: fprintd-manager:206
+msgid "Left index finger"
+msgstr "Índice izquierdo"
+
+#: fprintd-manager:207
+msgid "Right thumb"
+msgstr "Pulgar derecho"
+
+#: fprintd-manager:208
+msgid "Left thumb"
+msgstr "Pulgar izquierdo"
+
+#: fprintd-manager:209
+msgid "Right middle finger"
+msgstr "Corazón derecho"
+
+#: fprintd-manager:210
+msgid "Left middle finger"
+msgstr "Corazón izquierdo"
+
+#: fprintd-manager:211
+msgid "Right ring finger"
+msgstr "Anular derecho"
+
+#: fprintd-manager:212
+msgid "Left ring finger"
+msgstr "Anular izquierdo"
+
+#: fprintd-manager:213
+msgid "Right little finger"
+msgstr "Meñique derecho"
+
+#: fprintd-manager:214
+msgid "Left little finger"
+msgstr "Meñique izquierdo"
+
+#: fprintd-manager:321
+#, python-brace-format
+msgid "Command timed out after {seconds}s"
+msgstr "El comando superó el tiempo límite de {seconds} s"
+
+#: fprintd-manager:324
+#, python-brace-format
+msgid "Command not found: {command}"
+msgstr "Comando no encontrado: {command}"
+
+#: fprintd-manager:692 fprintd-manager:1473
+msgid "fprintd Fingerprint Manager"
+msgstr "Gestor de huellas fprintd"
+
+#: fprintd-manager:710
+msgid "Refresh status"
+msgstr "Actualizar estado"
+
+#: fprintd-manager:718
+msgid "About this app"
+msgstr "Acerca de esta aplicación"
+
+#: fprintd-manager:799
+msgid "Welcome! Let's set up your fingerprint"
+msgstr "¡Bienvenido! Configuremos su huella"
+
+#: fprintd-manager:801
+msgid ""
+"Your fingerprint scanner is connected and the driver is installed.\n"
+"\n"
+"To start using fingerprint login, you need to enroll a finger. Follow the "
+"prompts to touch the scanner repeatedly.\n"
+"\n"
+"By default, your RIGHT INDEX FINGER will be enrolled. If you're left-handed, "
+"you can change the finger in the dropdown below the Enroll button.\n"
+"\n"
+"Click 'Start Enrollment' to begin — then place your finger on the scanner "
+"when prompted."
+msgstr ""
+"Su lector de huellas está conectado y el controlador está instalado.\n"
+"\n"
+"Para empezar a iniciar sesión con la huella, debe registrar un dedo. Siga "
+"las indicaciones y toque el lector varias veces.\n"
+"\n"
+"De forma predeterminada se registrará su ÍNDICE DERECHO. Si es zurdo, puede "
+"cambiar el dedo en la lista desplegable bajo el botón «Registrar».\n"
+"\n"
+"Pulse «Iniciar registro» y coloque el dedo en el lector cuando se le indique."
+
+#: fprintd-manager:809
+msgid "Later"
+msgstr "Más tarde"
+
+#: fprintd-manager:810
+msgid "Start Enrollment"
+msgstr "Iniciar registro"
+
+#: fprintd-manager:845
+#, python-brace-format
+msgid "Developed by {author}"
+msgstr "Desarrollado por {author}"
+
+#: fprintd-manager:848
+msgid "Source and issues on GitHub"
+msgstr "Código fuente e incidencias en GitHub"
+
+#: fprintd-manager:853
+#, python-brace-format
+msgid ""
+"fprintd Fingerprint Manager v{version} — MIT licensed. Uses the system "
+"fprintd and libfprint packages."
+msgstr ""
+"Gestor de huellas fprintd v{version} — con licencia MIT. Usa los paquetes "
+"del sistema fprintd y libfprint."
+
+#: fprintd-manager:888 fprintd-manager:915 fprintd-manager:1380
+msgid "Checking…"
+msgstr "Comprobando…"
+
+#: fprintd-manager:897
+msgid "Scanner"
+msgstr "Lector"
+
+#: fprintd-manager:898
+msgid "Driver"
+msgstr "Controlador"
+
+#: fprintd-manager:899
+msgid "Fingers"
+msgstr "Dedos"
+
+#: fprintd-manager:908
+msgid "Fingerprint Enrollment"
+msgstr "Registro de huella"
+
+#: fprintd-manager:909
+msgid "Touch the scanner repeatedly when prompted by fprintd"
+msgstr "Toque el lector varias veces cuando fprintd se lo indique"
+
+#: fprintd-manager:914
+msgid "Enrollment Status"
+msgstr "Estado del registro"
+
+#: fprintd-manager:923
+msgid "Finger to enroll"
+msgstr "Dedo a registrar"
+
+#: fprintd-manager:943 fprintd-manager:1696
+msgid "Enroll"
+msgstr "Registrar"
+
+#: fprintd-manager:947
+msgid "Test Verify"
+msgstr "Probar verificación"
+
+#: fprintd-manager:951 fprintd-manager:1205
+msgid "Delete All"
+msgstr "Eliminar todo"
+
+#: fprintd-manager:955 fprintd-manager:971 fprintd-manager:1204
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: fprintd-manager:967
+msgid "Fingerprints already enrolled"
+msgstr "Ya hay huellas registradas"
+
+#: fprintd-manager:968
+msgid ""
+"You already have fingerprints enrolled. Enrolling a new finger will add to "
+"the existing ones. To start fresh, delete all first."
+msgstr ""
+"Ya tiene huellas registradas. Registrar un dedo nuevo lo añadirá a las "
+"existentes. Para empezar de cero, elimínelas todas primero."
+
+#: fprintd-manager:972 fprintd-manager:1688
+msgid "Add Another Finger"
+msgstr "Añadir otro dedo"
+
+#: fprintd-manager:993
+#, python-brace-format
+msgid "Preparing {finger}…"
+msgstr "Preparando: {finger}…"
+
+#: fprintd-manager:1008
+msgid "Deletion failed"
+msgstr "Error al eliminar"
+
+#: fprintd-manager:1013
+#, python-brace-format
+msgid "Enrolling {finger}… Touch the scanner NOW"
+msgstr "Registrando: {finger}… Toque el lector AHORA"
+
+#: fprintd-manager:1029 fprintd-manager:1081
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#: fprintd-manager:1040
+#, python-brace-format
+msgid "Touch {count} — good, keep going!"
+msgstr "Toque {count}: bien, ¡siga así!"
+
+#: fprintd-manager:1045 fprintd-manager:1106
+msgid "Enrollment complete!"
+msgstr "¡Registro completado!"
+
+#: fprintd-manager:1051
+#, python-brace-format
+msgid "Touch {count} — bad read, try again"
+msgstr "Toque {count}: lectura incorrecta, inténtelo de nuevo"
+
+#: fprintd-manager:1057
+#, python-brace-format
+msgid "Touch {count} — too short, hold longer"
+msgstr "Toque {count}: demasiado corto, mantenga más tiempo"
+
+#: fprintd-manager:1063
+#, python-brace-format
+msgid "Touch {count} — center your finger"
+msgstr "Toque {count}: centre el dedo"
+
+#: fprintd-manager:1069
+#, python-brace-format
+msgid "Touch {count} — lift and touch again"
+msgstr "Toque {count}: levante y vuelva a tocar"
+
+#: fprintd-manager:1072
+msgid "Enrollment failed — try again"
+msgstr "Error en el registro: inténtelo de nuevo"
+
+#: fprintd-manager:1075
+msgid "Storage full — delete old prints first"
+msgstr "Almacenamiento lleno: elimine primero huellas antiguas"
+
+#: fprintd-manager:1082
+msgid "Enrollment ended without completion"
+msgstr "El registro terminó sin completarse"
+
+#: fprintd-manager:1086
+#, python-brace-format
+msgid "Error: {error}"
+msgstr "Error: {error}"
+
+#: fprintd-manager:1102 fprintd-manager:1129
+msgid "Enrollment saved."
+msgstr "Registro guardado."
+
+#: fprintd-manager:1107
+msgid ""
+"Fingerprint recorded successfully.\n"
+"\n"
+"Would you like to do a quick verification touch to confirm your fingerprint "
+"is working?"
+msgstr ""
+"Huella registrada correctamente.\n"
+"\n"
+"¿Desea hacer una verificación rápida para confirmar que su huella funciona?"
+
+#: fprintd-manager:1111
+msgid "Skip"
+msgstr "Omitir"
+
+#: fprintd-manager:1112
+msgid "Verify Now"
+msgstr "Verificar ahora"
+
+#: fprintd-manager:1124
+msgid "Touch the scanner once to verify…"
+msgstr "Toque el lector una vez para verificar…"
+
+#: fprintd-manager:1125
+msgid "Verification — touch the scanner once…"
+msgstr "Verificación: toque el lector una vez…"
+
+#: fprintd-manager:1128
+msgid "Enrollment saved — you're all set!"
+msgstr "Registro guardado: ¡todo listo!"
+
+#: fprintd-manager:1150
+msgid "Fingerprint verified! Everything is working."
+msgstr "¡Huella verificada! Todo funciona."
+
+#: fprintd-manager:1152
+msgid "Fingerprint verified! You're all set."
+msgstr "¡Huella verificada! Todo listo."
+
+#: fprintd-manager:1154
+msgid "Verification failed — try Test Verify again"
+msgstr ""
+"Error en la verificación: vuelva a intentarlo con «Probar verificación»"
+
+#: fprintd-manager:1156
+msgid "Verification didn't match — try again with Test Verify"
+msgstr "No hubo coincidencia: inténtelo de nuevo con «Probar verificación»"
+
+#: fprintd-manager:1174
+#, python-brace-format
+msgid "Verifying {finger} — touch the scanner…"
+msgstr "Verificando: {finger}. Toque el lector…"
+
+#: fprintd-manager:1181
+msgid "Fingerprint verified!"
+msgstr "¡Huella verificada!"
+
+#: fprintd-manager:1183
+msgid "No match — try again or re-enroll"
+msgstr "Sin coincidencia: inténtelo de nuevo o vuelva a registrar"
+
+#: fprintd-manager:1185
+msgid "Verification timed out"
+msgstr "Se agotó el tiempo de verificación"
+
+#: fprintd-manager:1201
+msgid "Delete all fingerprints?"
+msgstr "¿Eliminar todas las huellas?"
+
+#: fprintd-manager:1202
+msgid "You will need to re-enroll after deletion."
+msgstr "Tendrá que volver a registrarse tras eliminarlas."
+
+#: fprintd-manager:1240
+msgid "All fingerprints deleted"
+msgstr "Se eliminaron todas las huellas"
+
+#: fprintd-manager:1242
+#, python-brace-format
+msgid "Delete failed: {error}"
+msgstr "Error al eliminar: {error}"
+
+#: fprintd-manager:1255
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: fprintd-manager:1256
+msgid "Fingerprint attempts and timeout before password fallback"
+msgstr "Intentos de huella y tiempo límite antes de recurrir a la contraseña"
+
+#: fprintd-manager:1266
+msgid "Max Attempts"
+msgstr "Intentos máximos"
+
+#: fprintd-manager:1267
+msgid "Number of fingerprint tries before password fallback"
+msgstr "Número de intentos de huella antes de pedir la contraseña"
+
+#: fprintd-manager:1275
+msgid "Timeout (seconds)"
+msgstr "Tiempo límite (segundos)"
+
+#: fprintd-manager:1276
+msgid "Total time window for all fingerprint attempts"
+msgstr "Tiempo total para todos los intentos de huella"
+
+#: fprintd-manager:1284
+msgid "Requires your login password (system files need admin access)"
+msgstr ""
+"Requiere su contraseña de inicio de sesión (los archivos del sistema "
+"necesitan permisos de administrador)"
+
+#: fprintd-manager:1287 fprintd-manager:1316 fprintd-manager:1341
+msgid "Apply PAM Settings"
+msgstr "Aplicar ajustes de PAM"
+
+#: fprintd-manager:1300 fprintd-manager:1409
+msgid "Applying…"
+msgstr "Aplicando…"
+
+#: fprintd-manager:1318
+msgid ""
+"Nothing enabled yet — turn on a switch under “Where to Use Fingerprint”; "
+"these settings apply with it"
+msgstr ""
+"Aún no hay nada activado: active un interruptor en «Dónde usar la huella»; "
+"estos ajustes se aplicarán con él"
+
+#: fprintd-manager:1344
+#, python-brace-format
+msgid "PAM updated: {tries} tries, {timeout}s timeout (applied to: {places})"
+msgstr ""
+"PAM actualizado: {tries} intentos, {timeout} s de tiempo límite (aplicado a: "
+"{places})"
+
+#: fprintd-manager:1350
+#, python-brace-format
+msgid "Failed: {error}"
+msgstr "Error: {error}"
+
+#: fprintd-manager:1364
+msgid "Where to Use Fingerprint"
+msgstr "Dónde usar la huella"
+
+#: fprintd-manager:1365
+msgid ""
+"Turn fingerprint on or off for each place independently — password always "
+"still works"
+msgstr ""
+"Active o desactive la huella en cada lugar por separado; la contraseña "
+"siempre sigue funcionando"
+
+#: fprintd-manager:1395
+msgid "On"
+msgstr "Activado"
+
+#: fprintd-manager:1395
+msgid "Off"
+msgstr "Desactivado"
+
+#: fprintd-manager:1421
+#, python-brace-format
+msgid "Couldn't change “{place}” — authentication cancelled or failed"
+msgstr "No se pudo cambiar «{place}»: autenticación cancelada o fallida"
+
+#: fprintd-manager:1424
+#, python-brace-format
+msgid "Fingerprint enabled for {place}"
+msgstr "Huella activada para: {place}"
+
+#: fprintd-manager:1426
+#, python-brace-format
+msgid "Fingerprint disabled for {place}"
+msgstr "Huella desactivada para: {place}"
+
+#: fprintd-manager:1436
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#: fprintd-manager:1440
+msgid "Managed by the package manager"
+msgstr "Gestionado por el gestor de paquetes"
+
+#: fprintd-manager:1441
+msgid "Update fprintd and the compatible libfprint package using pacman."
+msgstr "Actualice fprintd y el paquete libfprint compatible con pacman."
+
+#: fprintd-manager:1445
+msgid "Diagnostics"
+msgstr "Diagnóstico"
+
+#: fprintd-manager:1446
+#, python-brace-format
+msgid "Log: {path}"
+msgstr "Registro: {path}"
+
+#: fprintd-manager:1450 fprintd-manager:1519
+msgid "Activity Log"
+msgstr "Registro de actividad"
+
+#: fprintd-manager:1451
+msgid "View all events for troubleshooting"
+msgstr "Ver todos los eventos para solucionar problemas"
+
+#: fprintd-manager:1456
+msgid "View Log"
+msgstr "Ver registro"
+
+#: fprintd-manager:1459
+msgid "Clear Log"
+msgstr "Borrar registro"
+
+#: fprintd-manager:1484
+msgid ""
+"Fingerprint manager for readers supported by fprintd on Linux.\n"
+"\n"
+"Adapted from chipsailing-cs9711-fingerprint-linux for the packaged fprintd "
+"service. Thank you to Mahmud Farooque and the upstream contributors. The "
+"original GUI is MIT licensed. The upstream community libfprint driver is "
+"LGPL-2.1-or-later, from the archeYR/libfprint-CS9711 community fork."
+msgstr ""
+"Gestor de huellas para lectores compatibles con fprintd en Linux.\n"
+"\n"
+"Adaptado de chipsailing-cs9711-fingerprint-linux para el servicio fprintd "
+"empaquetado. Gracias a Mahmud Farooque y a los colaboradores originales. La "
+"interfaz original tiene licencia MIT. El controlador comunitario de "
+"libfprint original tiene licencia LGPL-2.1-or-later y procede del fork "
+"comunitario archeYR/libfprint-CS9711."
+
+#. Translators: replace with your names, one per line, to be credited
+#. in the About dialog.
+#: fprintd-manager:1492
+msgid "translator-credits"
+msgstr ""
+
+#: fprintd-manager:1496
+msgid "Developer on GitHub"
+msgstr "Desarrollador en GitHub"
+
+#: fprintd-manager:1497
+msgid "Report an issue"
+msgstr "Informar de un problema"
+
+#: fprintd-manager:1498
+msgid "Upstream driver"
+msgstr "Controlador original"
+
+#: fprintd-manager:1515
+msgid "(No log file yet)"
+msgstr "(Aún no hay archivo de registro)"
+
+#: fprintd-manager:1528
+msgid "Copy log to clipboard"
+msgstr "Copiar registro al portapapeles"
+
+#: fprintd-manager:1551
+msgid "Log copied to clipboard"
+msgstr "Registro copiado al portapapeles"
+
+#: fprintd-manager:1573
+msgid "Log cleared"
+msgstr "Registro borrado"
+
+#: fprintd-manager:1621
+msgid "Driver cannot load"
+msgstr "No se puede cargar el controlador"
+
+#: fprintd-manager:1622
+#, python-brace-format
+msgid ""
+"Missing {libraries} — a system library the driver was built against was "
+"upgraded. Update or rebuild your libfprint package."
+msgstr ""
+"Falta {libraries}: se actualizó una biblioteca del sistema con la que se "
+"compiló el controlador. Actualice o recompile su paquete libfprint."
+
+#: fprintd-manager:1629
+msgid "Scanner not detected"
+msgstr "Lector no detectado"
+
+#: fprintd-manager:1630
+msgid "Check the reader connection, libfprint support and the fprintd service."
+msgstr ""
+"Compruebe la conexión del lector, la compatibilidad con libfprint y el "
+"servicio fprintd."
+
+#: fprintd-manager:1635
+msgid "Driver not installed"
+msgstr "Controlador no instalado"
+
+#: fprintd-manager:1636
+msgid "Install a compatible libfprint package and check the fprintd service."
+msgstr ""
+"Instale un paquete libfprint compatible y compruebe el servicio fprintd."
+
+#: fprintd-manager:1641
+msgid "Ready to set up"
+msgstr "Listo para configurar"
+
+#: fprintd-manager:1642
+msgid "Scanner and driver are working — enrol a finger to start using it."
+msgstr ""
+"El lector y el controlador funcionan: registre un dedo para empezar a usarlo."
+
+#: fprintd-manager:1647
+msgid "Fingerprint is ready"
+msgstr "La huella está lista"
+
+#: fprintd-manager:1649
+#, python-brace-format
+msgid "Active for {places}."
+msgstr "Activo para: {places}."
+
+#: fprintd-manager:1652
+msgid ""
+"Enrolled, but not switched on anywhere yet — see Where to Use Fingerprint."
+msgstr ""
+"Registrada, pero aún no activada en ningún sitio: consulte «Dónde usar la "
+"huella»."
+
+#: fprintd-manager:1665
+msgid "Scanner ✓"
+msgstr "Lector ✓"
+
+#: fprintd-manager:1665
+msgid "Scanner ✕"
+msgstr "Lector ✕"
+
+#: fprintd-manager:1668
+msgid "Driver ✓"
+msgstr "Controlador ✓"
+
+#: fprintd-manager:1668
+msgid "Driver broken"
+msgstr "Controlador dañado"
+
+#: fprintd-manager:1668
+msgid "Driver ✕"
+msgstr "Controlador ✕"
+
+#: fprintd-manager:1671
+#, python-brace-format
+msgid "{count} finger"
+msgid_plural "{count} fingers"
+msgstr[0] "{count} dedo"
+msgstr[1] "{count} dedos"
+
+#: fprintd-manager:1672
+msgid "No fingers"
+msgstr "Ningún dedo"
+
+#: fprintd-manager:1678
+#, python-brace-format
+msgid "Driver cannot load — missing {libraries} (system OpenCV upgrade?)"
+msgstr ""
+"No se puede cargar el controlador: falta {libraries} (¿actualización de "
+"OpenCV?)"
+
+#: fprintd-manager:1689
+msgid "Enrolled"
+msgstr "Registrado"
+
+#: fprintd-manager:1691
+#, python-brace-format
+msgid "{count} finger: {names}"
+msgid_plural "{count} fingers: {names}"
+msgstr[0] "{count} dedo: {names}"
+msgstr[1] "{count} dedos: {names}"
+
+#: fprintd-manager:1697
+msgid "Not Enrolled"
+msgstr "No registrado"
+
+#: fprintd-manager:1699
+msgid "No fingerprints enrolled — click Enroll to get started"
+msgstr "No hay huellas registradas: pulse «Registrar» para empezar"
